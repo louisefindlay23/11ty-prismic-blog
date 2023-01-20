@@ -1,2 +1,4 @@
 _site/
 node_modules/
+netlify/functions/preview/**
+!netlify/functions/preview/index.js

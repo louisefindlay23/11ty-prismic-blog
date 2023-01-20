@@ -7,16 +7,31 @@ const {
 // documentation in your IDE while defining plugin options.
 const prismicPluginOptions = definePrismicPluginOptions({
     endpoint: "developerblog",
+    preview: {
+        name: "preview",
+        functionsDir: "./netlify/functions/",
+    },
 
     // Optional, additional parameters to pass to the client
     clientConfig: {
         accessToken: "2c5007bbe230022f48f2a619407e3d2d",
     },
-
-    /* see configuration references for more */
+    routes: [
+        {
+            type: "page",
+            path: "/",
+        },
+        { type: "developer_posts", path: "/blog/:uid" },
+    ],
 });
 
+const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+
 const config = function (eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+        name: "preview",
+        functionsDir: "./netlify/functions/",
+    });
     eleventyConfig.addPlugin(pluginPrismic, prismicPluginOptions);
     eleventyConfig.addFilter("markdown", function (value) {
         let markdown = require("markdown-it")({
