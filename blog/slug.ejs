@@ -9,13 +9,4 @@ permalink: "blog/<%= post.uid %>/"
 ---
 
 <h2>Markdown from Plain Text</h2>
-<h3>
-    Renders properly but no paragraphs or headings - since obtained from API as
-    key text
-</h3>
-<%- js.markdown(js.asText(post.data.content)) %>
-<h2>Markdown from HTML</h2>
-<h3>
-    Doesn't render but contains paragraphs - since obtained from API as HTML
-</h3>
-<%- js.markdown(js.asHTML(post.data.content)) %>
+<%- js.markdown(js.asText(post.data.content, "\n")) %>
