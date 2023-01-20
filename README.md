@@ -6,6 +6,6 @@ To use Eleventy to render a markdown developer blog using data from Prismic's Le
 
 ### Technology
 
-**SSG**: Eleventy
-**Content**: Prismic - eleventy-plugin-prismic
-**Markdown**: Markdown-it
+- **SSG**: Eleventy
+- **Content**: Prismic - eleventy-plugin-prismic
+- **Markdown**: Markdown-it
