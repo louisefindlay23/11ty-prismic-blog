@@ -8,4 +8,5 @@ To use Eleventy to render a markdown developer blog using data from Prismic's Le
 
 - **SSG**: Eleventy
 - **Content**: Prismic - eleventy-plugin-prismic
+- **Templating**: EJS
 - **Markdown**: Markdown-it
