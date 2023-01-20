@@ -38,9 +38,6 @@ const config = function (eleventyConfig) {
     eleventyConfig.addFilter("markdown", function (value) {
         let markdown = require("markdown-it")({
             html: true,
-        }).use(require("markdown-it-highlightjs"), {
-            inline: true,
-            code: true,
         });
         return markdown.render(value);
     });
