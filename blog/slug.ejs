@@ -1,0 +1,15 @@
+---
+layout: base-layout.ejs
+pagination:
+  data: prismic.developer_posts
+  size: 1
+  alias: post
+	addAllPagesToCollections: true
+permalink: "blog/<%= post.uid %>/"
+---
+
+<h1><%= js.asText(post.data.title) %></h1>
+<%= js.asText(post.data.content) %>
+<br />
+<br />
+<%- js.markdown(js.asText(post.data.content)) %>

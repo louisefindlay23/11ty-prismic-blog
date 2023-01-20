@@ -18,7 +18,14 @@ const prismicPluginOptions = definePrismicPluginOptions({
 
 const config = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginPrismic, prismicPluginOptions);
+    eleventyConfig.addFilter("markdown", function (value) {
+        let markdown = require("markdown-it")({
+            html: true,
+        });
+        return markdown.render(value);
+    });
     js = eleventyConfig.javascriptFunctions;
+    eleventyConfig.addPassthroughCopy("css");
 };
 // This format is important if you want to setup previews
 // with the plugin.
