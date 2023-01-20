@@ -5,7 +5,9 @@ pagination:
   size: 1
   alias: post
 	addAllPagesToCollections: true
-permalink: "blog/<%= post.uid %>/"
+permalink: 
+  build: "/blog/<%= post.uid %>/"
+  preview: "/preview/blog/<%= post.uid %>/"
 ---
 
 <h2>Markdown from Plain Text</h2>
