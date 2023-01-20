@@ -21,7 +21,7 @@ const config = function (eleventyConfig) {
     eleventyConfig.addFilter("markdown", function (value) {
         let markdown = require("markdown-it")({
             html: true,
-        });
+        }).use(require("markdown-it-highlightjs"), { inline: true });
         return markdown.render(value);
     });
     js = eleventyConfig.javascriptFunctions;
