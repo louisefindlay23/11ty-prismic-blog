@@ -18,9 +18,7 @@ const prismicPluginOptions = definePrismicPluginOptions({
 
 const config = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginPrismic, prismicPluginOptions);
-    return {
-        markdownTemplateEngine: "njk",
-    };
+    js = eleventyConfig.javascriptFunctions;
 };
 // This format is important if you want to setup previews
 // with the plugin.
