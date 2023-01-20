@@ -33,10 +33,15 @@ const config = function (eleventyConfig) {
         functionsDir: "./netlify/functions/",
     });
     eleventyConfig.addPlugin(pluginPrismic, prismicPluginOptions);
+    const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+    eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addFilter("markdown", function (value) {
         let markdown = require("markdown-it")({
             html: true,
-        }).use(require("markdown-it-highlightjs"), { inline: true });
+        }).use(require("markdown-it-highlightjs"), {
+            inline: true,
+            code: true,
+        });
         return markdown.render(value);
     });
     js = eleventyConfig.javascriptFunctions;
