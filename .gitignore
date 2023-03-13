@@ -1,4 +1,5 @@
 _site/
 node_modules/
+.env
 netlify/functions/preview/**
 !netlify/functions/preview/index.js
